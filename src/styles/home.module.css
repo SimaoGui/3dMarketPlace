@@ -1,0 +1,36 @@
+body {
+    width: 100vw;
+    height: 300vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    & .parallax {
+        height: 100vh;
+        width: 100vw;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        scroll-snap-align: start;
+        align-items: center;
+        justify-content: center;
+
+        &:nth-child(1) {
+            background-image: url('../assets/nezuko-kamado-cute-3840x2160-18712.jpg');
+        }
+
+        &:nth-child(2) {
+            background-image: url('../assets/tanjiro-nezuko-3840x2160-20184.jpg');
+        }
+
+        &:nth-child(3) {
+            background-image: url('../assets/zenitsu-agatsuma-3840x2160-20236.jpg');
+        }
+
+        & .content {
+            color: red;
+            text-align: center;
+            padding: 50px;
+        }
+    }
+}
