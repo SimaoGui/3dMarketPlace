@@ -1,0 +1,249 @@
+:root {
+  /* Cores Base Futuristas */
+  --color-deep-blue: #0a1a2f;
+  --color-navy: #162a47;
+  --color-electric-blue: #00a8e8;
+  --color-cyan: #4cc9f0;
+  --color-gray-90: #1a1a1a;
+  --color-gray-60: #4d4d4d;
+  --color-gray-20: #cccccc;
+  --color-white: #ffffff;
+
+  /* Efeitos Futuristas */
+  --glow-effect: 0 0 10px rgba(0, 168, 232, 0.7);
+  --transition-fast: all 0.3s ease-in-out;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(10, 26, 47, 0.5); /* --color-deep-blue com transparência */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 1.5rem 2rem;
+  transition: var(--transition-fast);
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--glow-effect);
+  border: 1px solid rgba(76, 201, 240, 0.3); /* --color-cyan com transparência */
+  border-top: none;
+}
+
+.navbar.scrolled {
+  background-color: rgba(22, 42, 71, 0.3); /* --color-navy com transparência */
+  backdrop-filter: blur(12px);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 168, 232, 0.9);
+  transform: translateY(-15vh);
+}
+
+.navbarContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbarLogoPC a {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--color-cyan);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  display: inline-block;
+  text-shadow: var(--glow-effect);
+}
+
+.navbarLogoPC a:hover {
+  transform: scale(1.05);
+  color: var(--color-electric-blue);
+}
+
+.navbarLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLink {
+  color: var(--color-gray-20);
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--color-white);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-electric-blue);
+  transition: var(--transition-fast);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navbarIcons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding: 0.5rem;
+  transition: var(--transition-fast);
+}
+
+.navIcon {
+  color: var(--color-gray-20);
+  font-size: 1.4rem;
+  transition: var(--transition-fast);
+}
+
+.iconButton:hover .navIcon {
+  color: var(--color-electric-blue);
+  transform: translateY(-2px);
+  filter: drop-shadow(var(--glow-effect));
+}
+
+.cartIcon {
+  position: relative;
+}
+
+.cartCount {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: var(--color-electric-blue);
+  color: var(--color-white);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: bold;
+  box-shadow: 0 0 5px var(--color-electric-blue);
+}
+
+/* Efeito de brilho nos elementos interativos */
+.navLink:hover,
+.iconButton:hover {
+  text-shadow: 0 0 8px rgba(76, 201, 240, 0.7);
+}
+
+/* Botão hambúrguer (menu mobile) */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--color-cyan);
+  font-size: 1.8rem;
+  transition: var(--transition-fast);
+}
+
+.hamburger:hover {
+  color: var(--color-electric-blue);
+  text-shadow: var(--glow-effect);
+}
+
+.navbarTop {
+  display: none;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .navbarLogoPC {
+    display: none;
+  }
+
+  .navbarContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .navbarTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .navbarLogo a {
+    font-size: 1.5rem;
+    color: var(--color-cyan);
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .hamburger {
+    display: flex;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: var(--color-cyan);
+  }
+
+  .navbarIcons {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .navbarLinks {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    gap: 1rem;
+    background-color: rgba(10, 26, 47, 0.9);
+    border-radius: 16px;
+    padding: 1rem 2rem;
+    box-shadow: var(--glow-effect);
+    animation: dropdownFade 0.3s ease forwards;
+  }
+
+  .showMenu {
+    display: flex;
+  }
+}
+
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

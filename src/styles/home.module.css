@@ -5,32 +5,99 @@ body {
     overflow-y: auto;
 
     & .parallax {
-        height: 100vh;
+        height: 140vh;
         width: 100vw;
         background-position: center;
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-size: cover;
         scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
 
         &:nth-child(1) {
-            background-image: url('../assets/nezuko-kamado-cute-3840x2160-18712.jpg');
+            background-image: url('../assets/rolex.jpg');
         }
 
         &:nth-child(2) {
-            background-image: url('../assets/tanjiro-nezuko-3840x2160-20184.jpg');
+            background-image: url('../assets/keyboard.jpg');
         }
 
         &:nth-child(3) {
-            background-image: url('../assets/zenitsu-agatsuma-3840x2160-20236.jpg');
+            background-image: url('../assets/headset.jpg');
         }
 
         & .content {
-            color: red;
-            text-align: center;
-            padding: 50px;
+            width: auto;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            gap: .4rem;
+
+            & h2 {
+                font-size: 2.5rem;
+                font-weight: 600;
+                font-family: 'Orbitron', sans-serif;
+                color: var(--color-white);
+                text-decoration: none;
+                transition: var(--transition-fast);
+                display: inline-block;
+                text-shadow: var(--glow-effect);  
+            }
+
+            & h1 {
+                font-size: 4rem;
+                font-weight: 700;
+                font-family: 'Montserrat', sans-serif;
+                color: var(--color-white);
+                text-decoration: none;
+                transition: var(--transition-fast);
+                display: inline-block;
+                text-shadow: var(--glow-effect);
+                text-align: center;
+            }
+        }
+
+        & .redirect{
+            height: 25vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & a {
+                color: var(--color-white);
+                text-decoration: none;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 500;
+                position: relative;
+                padding: 0.5rem 0;
+                transition: var(--transition-fast);
+                font-size: 1.4rem;
+            }
+
+            a:hover {
+                color: var(--color-gray-20);
+            }
+
+            a::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: var(--color-electric-blue);
+                transition: var(--transition-fast);
+            }
+
+            a:hover::after {
+                width: 100%;
+            }
         }
     }
 }
