@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react';
 import styles from '../styles/home.module.css';
 import '../index.css';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import ScrollReveal from 'scrollreveal';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
+
   useEffect(() => {
     ScrollReveal().reveal(`.${styles.content}`, {
       origin: 'top',
@@ -29,22 +32,29 @@ function HomePage() {
             <h1>Shopee do Futuro</h1>
           </div>
           <div className={styles.redirect}>
-            <a href="/">Descubra os novos importados 2025</a>
+            <Link to="/produtos"  onClick={() => window.scrollTo(0, 0)}>Descubra os novos importados 2025</Link>
           </div>
         </div>
         <div className={styles.parallax}> 
           <div className={styles.content}>
-            <h1>Title</h1>
-            <p>Subtitle</p>
+            <h2>Coleções</h2>
+            <h1>Shopee do Futuro</h1>
+          </div>
+          <div className={styles.redirect}>
+            <Link to="/colecoes" onClick={() => window.scrollTo(0, 0)}>Descubra as novas coleções 2025</Link>
           </div>
         </div>
         <div className={styles.parallax}> 
           <div className={styles.content}>
-            <h1>Title</h1>
-            <p>Subtitle</p>
+            <h2>Contato</h2>
+            <h1>Shopee do Futuro</h1>
+          </div>
+          <div className={styles.redirect}>
+            <Link to="/contato" onClick={() => window.scrollTo(0, 0)}>Entre em contato e garanta já um Serviço de Excelência </Link>
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }
