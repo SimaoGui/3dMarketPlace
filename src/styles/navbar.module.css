@@ -79,6 +79,21 @@
   color: var(--color-primary-light);
 }
 
+.navbarLogo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition-normal);
+  display: inline-block;
+}
+
+.navbarLogo a:hover {
+  transform: scale(1.05);
+  color: var(--color-primary-light);
+}
+
 .navbarLinks {
   display: flex;
   gap: 2rem;
@@ -216,7 +231,7 @@
 
   .navbarLogo a {
     font-size: 1.5rem;
-    text-decoration: none;
+    text-decoration: none !important;
     font-weight: bold;
   }
 

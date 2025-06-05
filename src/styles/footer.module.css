@@ -177,6 +177,10 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
+  footer {
+    padding: 0 1rem !important;
+  }
+
   .footerContent {
     grid-template-columns: 1fr;
     gap: 2rem;

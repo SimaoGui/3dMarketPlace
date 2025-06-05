@@ -38,7 +38,7 @@ const Navbar = () => {
         {/* TOPO: logo + hambúrguer */}
         <div className={styles.navbarTop}>
           <div className={styles.navbarLogo}>
-            <Link to="/" onClick={() => window.scrollTo(0, 0)}>3dMarketPlace</Link>
+            <a to="/" onClick={() => window.scrollTo(0, 0)}>3dMarketPlace</a>
           </div>
           <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <FiX /> : <FiMenu />}
