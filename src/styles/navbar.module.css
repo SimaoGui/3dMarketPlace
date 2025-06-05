@@ -183,6 +183,10 @@
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    height: auto;
+  }
+
   .navbarLogoPC {
     display: none;
   }
