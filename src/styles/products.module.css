@@ -1,8 +1,49 @@
 
+:root {
+    /* Cores Primárias (Terracota) */
+    --color-primary: #e07a5f;       /* Terracota moderno */
+    --color-primary-light: #e9967a;
+    --color-primary-dark: #c56a52;
+    
+    /* Neutros Quentes */
+    --color-bg-base: #f5f3f0;       /* Bege muito claro */
+    --color-bg-alt: #ebe6e1;        /* Bege médio */
+    --color-bg-card: #ffffff;      
+    
+    /* Textos */
+    --color-text-primary: #33312e;   /* Quase preto com tom quente */
+    --color-text-secondary: #5a5753;
+    
+    /* Cores de Destaque */
+    --color-accent: #6a8d73;        /* Verde suave */
+    --color-accent-light: #8aaa91;
+    --color-secondary: #b392ac;      /* Lavanda suave */
+    
+    /* Bordas */
+    --color-border: #d7d2cc;
+    
+    --shadow-sm: 0 1px 3px rgba(55, 49, 46, 0.08); /* Tom terroso escuro com baixa opacidade */
+    --shadow-md: 0 4px 6px rgba(55, 49, 46, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(55, 49, 46, 0.12);
+    --shadow-xl: 0 20px 25px -5px rgba(55, 49, 46, 0.15);
+    
+    /* Efeitos Glow personalizados */
+    --glow-primary: 0 0 8px rgba(224, 122, 95, 0.4); /* Terracota luminosa */
+    --glow-accent: 0 0 8px rgba(106, 141, 115, 0.3); /* Verde suave */
+    --glow-secondary: 0 0 8px rgba(179, 146, 172, 0.3); /* Lavanda */
+    
+    /* Sombras internas para profundidade */
+    --shadow-inner: inset 0 2px 4px rgba(55, 49, 46, 0.05);
+    
+    /* Transições suaves */
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 .mainDiv {
   width: 100%;
   height: 100%;
-  background-color: var(--color-gray-20);
+  background-color: var(--color-bg-base);
 }
 
 .hero {
@@ -35,8 +76,8 @@
   position: absolute;
   top: 35vh;
   left: 10%;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: var(--color-primary-light);
+  text-shadow: var(--shadow-md);
   max-width: 600px;
 }
 
@@ -56,8 +97,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  background-color: var(--color-bg-base);
+  color: var(--color-primary);
   border: none;
   cursor: pointer;
   padding: 1rem;
@@ -74,7 +115,7 @@
 
 .carrosselButtonPrev:hover,
 .carrosselButtonNext:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--color-bg-alt)
 }
 
 .carrosselButtonPrev {
@@ -99,14 +140,14 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--color-bg-base);
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .indicator.active {
-  background-color: white;
+  background-color: var(--color-primary-light);
 }
 
 @media (max-width: 768px) {
@@ -143,8 +184,8 @@
 }
 
 .productsTitle {
-  font-family: 'Orbitron', sans-serif;
-  color: var(--color-primary-light);
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-primary);
   text-align: center;
   margin-bottom: 3rem;
   font-size: 2.5rem;
@@ -161,7 +202,7 @@
 }
 
 .productCard {
-  background: var(--color-dark-light);
+  background: var(--color-bg-base);
   border-radius: 1.25rem;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -170,8 +211,8 @@
 
 .productCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 168, 232, 0.1);
-  border-color: rgba(76, 201, 240, 0.5);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border);
 }
 
 .productImage {
@@ -179,7 +220,8 @@
   height: 250px;
   object-fit: contain;
   padding: 1rem;
-  border-bottom: 1px solid var(--color-primary-light);
+  background-color: var(--color-bg-card);
+  border-bottom: 1px solid var(--color-border);
   transition: var(--transition-fast);
 }
 
@@ -188,14 +230,14 @@
 }
 
 .productTitle {
-  color: var(--color-white);
-  font-family: 'Orbitron', sans-serif;
+  color: var(--color-text-primary);
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
 
 .productDescription {
-  color: var(--color-gray-20);
+  color: var(--color-text-secondary);
   font-size: 0.9rem;
   margin-bottom: 1rem;
   min-height: 60px;
@@ -209,18 +251,19 @@
 }
 
 .productPrice {
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-weight: bold;
   font-size: 1.1rem;
 }
 
 .productButton {
-  background: var(--color-primary-light);
-  color: var(--color-white);
-  padding: 0.5rem 1rem;
+  background: var(--color-accent-light);
+  color: var(--color-text-primary);
+  padding: 0.5rem;
   border-radius: 5px;
   text-decoration: none;
-  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
   transition: all 0.3s ease;
 }
 
@@ -234,7 +277,7 @@
   text-align: center;
   padding: 2rem;
   font-size: 1.2rem;
-  color: var(--color-accent);
+  color: var(--color-secondary);
 }
 
 .error {
@@ -251,8 +294,8 @@
 }
 
 .categoria h1 {
-  font-family: 'Orbitron', sans-serif;
-  color: var(--color-primary-light);
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-primary);
   font-size: 2.5rem;
   margin-bottom: 2.5rem;
   text-shadow: var(--glow-effect);
@@ -274,17 +317,17 @@
   border-radius: 2rem;
   overflow: hidden;
   transition: all 0.4s ease;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-md);
   background: linear-gradient(145deg, 
-    rgba(22, 42, 71, 0.8), 
-    rgba(10, 26, 47, 0.9));
-  border: 1px solid rgba(76, 201, 240, 0.2);
+    var(--color-bg-base),
+    var(--color-bg-alt));
+  border: 1px solid var(--color-border);
 }
 
 .divCategoria:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 168, 232, 0.1);
-  border-color: rgba(76, 201, 240, 0.5);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border);
 }
 
 .divCategoria img {
@@ -308,14 +351,14 @@
   width: 100%;
   padding: 1rem;
   margin: 0;
-  color: var(--color-white);
-  font-family: 'Orbitron', sans-serif;
+  color: var(--color-primary-light);
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   text-align: center;
   background: linear-gradient(to top, 
-    rgba(10, 26, 47, 0.9) 0%, 
+    var(--color-bg-alt) 0%, 
     transparent 100%);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  text-shadow: var(--shadow-inner);
   letter-spacing: 1px;
 }
 
@@ -327,9 +370,6 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, 
-    rgba(76, 201, 240, 0.1) 0%, 
-    transparent 70%);
   opacity: 0;
   transition: opacity 0.4s ease;
   z-index: 1;

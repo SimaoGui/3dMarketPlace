@@ -1,8 +1,50 @@
-/* styles/Footer.module.css */
+:root {
+    /* Cores Primárias (Terracota) */
+    --color-primary: #e07a5f;       /* Terracota moderno */
+    --color-primary-light: #e9967a;
+    --color-primary-dark: #c56a52;
+    
+    /* Neutros Quentes */
+    --color-bg-base: #f5f3f0;       /* Bege muito claro */
+    --color-bg-alt: #ebe6e1;        /* Bege médio */
+    --color-bg-card: #ffffff;      
+    
+    /* Textos */
+    --color-text-primary: #33312e;   /* Quase preto com tom quente */
+    --color-text-secondary: #5a5753;
+    
+    /* Cores de Destaque */
+    --color-accent: #6a8d73;        /* Verde suave */
+    --color-accent-light: #8aaa91;
+    --color-secondary: #b392ac;      /* Lavanda suave */
+    
+    /* Bordas */
+    --color-border: #d7d2cc;
+    
+    --shadow-sm: 0 1px 3px rgba(55, 49, 46, 0.08); /* Tom terroso escuro com baixa opacidade */
+    --shadow-md: 0 4px 6px rgba(55, 49, 46, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(55, 49, 46, 0.12);
+    --shadow-xl: 0 20px 25px -5px rgba(55, 49, 46, 0.15);
+    
+    /* Efeitos Glow personalizados */
+    --glow-primary: 0 0 8px rgba(224, 122, 95, 0.4); /* Terracota luminosa */
+    --glow-accent: 0 0 8px rgba(106, 141, 115, 0.3); /* Verde suave */
+    --glow-secondary: 0 0 8px rgba(179, 146, 172, 0.3); /* Lavanda */
+    
+    /* Sombras internas para profundidade */
+    --shadow-inner: inset 0 2px 4px rgba(55, 49, 46, 0.05);
+    
+    /* Transições suaves */
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .footer {
   background: var(--color-dark-light);
+  background: var(--color-bg-alt);
   padding: 60px 0 30px;
-  color: var(--color-white);
+  color: var(--color-text-primary);
 }
 
 .footerContent {
@@ -15,7 +57,7 @@
 }
 
 .serviceSection {
-  border-right: 1px solid var(--color-gray-60);
+  border-right: 1px solid var(--color-border);
   padding-right: 3rem;
   margin-right: 3rem;
 }
@@ -28,7 +70,7 @@
 
 .sectionTitle {
   font-family: 'Poppins', sans-serif;
-  color: var(--color-cyan);
+  color: var(--color-text-primary);
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
@@ -45,17 +87,17 @@
 }
 
 .serviceLink {
-  color: var(--color-gray-20);
+  color: var(--color-text-secondary);
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
-  transition: var(--transition-fast);
+  transition: var(--transition-normal);
   display: block;
   padding: 0.3rem 0;
 }
 
 .serviceLink:hover {
-  color: var(--color-primary-light);
+  color: var(--color-accent);
   transform: translateX(5px);
 }
 
@@ -72,14 +114,14 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  color: var(--color-gray-20);
+  color: var(--color-text-primary);
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   transition: var(--transition-fast);
 }
 
 .socialLink:hover {
-  color: var(--color-white);
+  color: var(--color-accent);
   transform: translateX(5px);
 }
 
@@ -98,8 +140,8 @@
 
 .paymentIcon {
   font-size: 2.2rem;
-  color: var(--color-gray-20);
-  transition: var(--transition-fast);
+  color: var(--color-text-secondary);
+  transition: var(--transition-normal);
 }
 
 .paymentIcon:hover {
@@ -109,7 +151,7 @@
 
 /* Estilos para o rodapé inferior */
 .footerBottom {
-  border-top: 1px solid var(--color-gray-60);
+  border-top: 1px solid var(--color-border);
   padding-top: 1.5rem;
   margin-top: 2rem;
   text-align: center;
@@ -128,7 +170,7 @@
 
 .copyright {
   font-family: 'Montserrat', sans-serif;
-  color: var(--color-gray-20);
+  color: var(--color-text-secondary);
   font-size: 0.9rem;
   letter-spacing: 0.5px;
 }
@@ -144,7 +186,7 @@
     border-right: none;
     margin-right: 0;
     padding-right: 0;
-    border-bottom: 1px solid var(--color-gray-60);
+    border-bottom: 1px solid var(--color-border);
     padding-bottom: 2rem;
   }
 
