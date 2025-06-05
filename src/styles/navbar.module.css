@@ -1,16 +1,15 @@
 :root {
-  /* Cores Base Futuristas */
-  --color-deep-blue: #0a1a2f;
-  --color-navy: #162a47;
-  --color-electric-blue: #00a8e8;
-  --color-cyan: #4cc9f0;
-  --color-gray-90: #1a1a1a;
-  --color-gray-60: #4d4d4d;
-  --color-gray-20: #cccccc;
-  --color-white: #ffffff;
-
-  /* Efeitos Futuristas */
-  --glow-effect: 0 0 10px rgba(0, 168, 232, 0.7);
+--color-primary: #2a6df4;        /* Azul principal moderno */
+  --color-primary-light: #4a8cff;   /* Azul mais claro */
+  --color-secondary: #6c5ce7;      /* Roxo para destaques */
+  --color-accent: #00c2a8;         /* Verde água para acentuação */
+  --color-dark: #1a1e29;           /* Fundo escuro sofisticado */
+  --color-dark-light: #252a38;     /* Fundo mais claro */
+  --color-gray-90: #2d3340;        /* Cinza escuro */
+  --color-gray-60: #5c6475;        /* Cinza médio */
+  --color-gray-20: #e2e6ee;        /* Cinza claro */
+  --color-white: #ffffff;          /* Branco */
+  --glow-effect: 0 0 12px rgba(42, 109, 244, 0.3);
   --transition-fast: all 0.3s ease-in-out;
 }
 
@@ -24,23 +23,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-navy); /* --color-deep-blue com transparência */
+  background-color: var(--color-dark);/* --color-deep-blue com transparência */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(8px);
   padding: 1rem 1rem;
   transition: var(--transition-fast);
   overflow: hidden;
   box-shadow: var(--glow-effect);
-  border: 1px solid rgba(76, 201, 240, 0.3); /* --color-cyan com transparência */
+  border: 1px solid rgba(42, 109, 244, 0.3); /* --color-cyan com transparência */
   border-top: none;
 }
 
 .navbar.scrolled {
-  background-color: rgba(22, 42, 71, 0.3); /* --color-navy com transparência */
+  background-color: rgba(37, 42, 56, 0.3); /* --color-navy com transparência */
   backdrop-filter: blur(12px);
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
-  box-shadow: 0 0 15px rgba(0, 168, 232, 0.9);
+  box-shadow: 0 0 15px rgba(42, 109, 244, 0.9);
   transform: translateY(-15vh);
 }
 
@@ -57,7 +56,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   font-family: 'Inter', sans-serif;
-  color: var(--color-cyan);
+  color: var(--color-primary-light);
   text-decoration: none;
   transition: var(--transition-fast);
   display: inline-block;
@@ -66,7 +65,7 @@
 
 .navbarLogoPC a:hover {
   transform: scale(1.05);
-  color: var(--color-electric-blue);
+  color: var(--color-primary);
 }
 
 .navbarLinks {
@@ -96,7 +95,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--color-electric-blue);
+  background-color: var(--color-accent);
   transition: var(--transition-fast);
 }
 
@@ -126,7 +125,7 @@
 }
 
 .iconButton:hover .navIcon {
-  color: var(--color-electric-blue);
+  color: var(--color-primary);
   transform: translateY(-2px);
   filter: drop-shadow(var(--glow-effect));
 }
@@ -139,7 +138,7 @@
   position: absolute;
   top: -5px;
   right: -5px;
-  background-color: var(--color-electric-blue);
+  background-color: var(--color-accent);
   color: var(--color-white);
   border-radius: 50%;
   width: 20px;
@@ -150,13 +149,13 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 0.7rem;
   font-weight: bold;
-  box-shadow: 0 0 5px var(--color-electric-blue);
+  box-shadow: 0 0 5px var(--color-accent);
 }
 
 /* Efeito de brilho nos elementos interativos */
 .navLink:hover,
 .iconButton:hover {
-  text-shadow: 0 0 8px rgba(76, 201, 240, 0.7);
+  text-shadow: 0 0 8px rgba(42, 109, 244, 0.7);
 }
 
 /* Botão hambúrguer (menu mobile) */
@@ -165,13 +164,13 @@
   cursor: pointer;
   background: none;
   border: none;
-  color: var(--color-cyan);
+  color: var(--color-primary-light);
   font-size: 1.8rem;
   transition: var(--transition-fast);
 }
 
 .hamburger:hover {
-  color: var(--color-electric-blue);
+  color: var(--color-primary);
   text-shadow: var(--glow-effect);
 }
 
@@ -206,7 +205,7 @@
 
   .navbarLogo a {
     font-size: 1.5rem;
-    color: var(--color-cyan);
+    color: var(--color-primary-light);
     text-decoration: none;
     font-weight: bold;
   }
@@ -231,7 +230,7 @@
     width: 100%;
     margin-top: 1rem;
     gap: 1rem;
-    background-color: rgba(10, 26, 47, 0.9);
+    background-color: rgba(29, 30, 41, 0.9);
     border-radius: 16px;
     padding: 1rem 2rem;
     box-shadow: var(--glow-effect);

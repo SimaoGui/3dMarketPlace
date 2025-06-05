@@ -1,8 +1,27 @@
+        :root {
+            /* Nova paleta de cores universal */
+            --color-primary: #2a6df4;        /* Azul principal moderno */
+            --color-primary-light: #4a8cff;   /* Azul mais claro */
+            --color-secondary: #6c5ce7;       /* Roxo para destaques */
+            --color-accent: #00c2a8;          /* Verde água para acentuação */
+            --color-dark: #1a1e29;            /* Fundo escuro sofisticado */
+            --color-dark-light: #252a38;      /* Fundo mais claro */
+            --color-gray-90: #2d3340;         /* Cinza escuro */
+            --color-gray-60: #5c6475;         /* Cinza médio */
+            --color-gray-20: #e2e6ee;         /* Cinza claro */
+            --color-white: #ffffff;           /* Branco */
+            
+            /* Efeitos atualizados */
+            --glow-effect: 0 0 12px rgba(42, 109, 244, 0.3);
+            --transition-fast: all 0.3s ease-in-out;
+        }
+
+
 .viewerContainer {
   width: 100%;
   height: 100%;
   position: relative;
-  background-color: var(--color-deep-blue-dark);
+  background-color: var(--color-primary-light);
   border-radius: 1rem;
   overflow: hidden;
 }

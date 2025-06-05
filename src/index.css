@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
 
-:root {
-  /* Cores Base Futuristas */
-  --color-deep-blue: #0a1a2f;       /* Azul marinho escuro (fundo principal) */
-  --color-navy: #162a47;            /* Azul marinho médio (headers, cards) */
-  --color-electric-blue: #00a8e8;   /* Azul neón (destaques, botões) */
-  --color-cyan: #4cc9f0;           /* Ciano (hover, detalhes finos) */
-  --color-gray-90: #1a1a1a;        /* Cinza quase preto (fundos opacos) */
-  --color-gray-60: #4d4d4d;        /* Cinza médio (bordas, textos secundários) */
-  --color-gray-20: #efefef;        /* Cinza claro (textos principais) */
-  --color-white: #ffffff;     
-  --color-bg-azulado: #f8faff; /* HEX alternativa */
-  --color-bg-azulado: hsl(216, 20%, 98%); /* Versão HSL (recomendado) */     /* Branco puro (títulos, ícones) */
-
-  /* Efeitos Futuristas */
-  --glow-effect: 0 0 10px rgba(0, 168, 232, 0.7); /* Sombreamento neón azul */
-  --transition-fast: all 0.3s ease-in-out;
-}
+        :root {
+            /* Nova paleta de cores universal */
+            --color-primary: #2a6df4;        /* Azul principal moderno */
+            --color-primary-light: #4a8cff;   /* Azul mais claro */
+            --color-secondary: #6c5ce7;       /* Roxo para destaques */
+            --color-accent: #00c2a8;          /* Verde água para acentuação */
+            --color-dark: #1a1e29;            /* Fundo escuro sofisticado */
+            --color-dark-light: #252a38;      /* Fundo mais claro */
+            --color-gray-90: #2d3340;         /* Cinza escuro */
+            --color-gray-60: #5c6475;         /* Cinza médio */
+            --color-gray-20: #e2e6ee;         /* Cinza claro */
+            --color-white: #ffffff;           /* Branco */
+            
+            /* Efeitos atualizados */
+            --glow-effect: 0 0 12px rgba(42, 109, 244, 0.3);
+            --transition-fast: all 0.3s ease-in-out;
+        }
 
 * {
   margin: 0;
