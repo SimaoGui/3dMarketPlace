@@ -48,7 +48,7 @@ const ModelViewer = ({ src, rotationY = 0, rotationX = 0, scale = 1 }) => {
 
     // Scene setup
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x1a1e29);
+    scene.background = new THREE.Color(0xf5f3f0);
     sceneRef.current = scene;
 
     // Lighting

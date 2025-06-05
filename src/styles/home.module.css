@@ -1,3 +1,45 @@
+:root {
+    /* Cores Primárias (Terracota) */
+    --color-primary: #e07a5f;       /* Terracota moderno */
+    --color-primary-light: #e9967a;
+    --color-primary-dark: #c56a52;
+    
+    /* Neutros Quentes */
+    --color-bg-base: #f5f3f0;       /* Bege muito claro */
+    --color-bg-alt: #ebe6e1;        /* Bege médio */
+    --color-bg-card: #ffffff;      
+    
+    /* Textos */
+    --color-text-primary: #33312e;   /* Quase preto com tom quente */
+    --color-text-secondary: #5a5753;
+    
+    /* Cores de Destaque */
+    --color-accent: #6a8d73;        /* Verde suave */
+    --color-accent-light: #8aaa91;
+    --color-secondary: #b392ac;      /* Lavanda suave */
+    
+    /* Bordas */
+    --color-border: #d7d2cc;
+    
+    --shadow-sm: 0 1px 3px rgba(55, 49, 46, 0.08); /* Tom terroso escuro com baixa opacidade */
+    --shadow-md: 0 4px 6px rgba(55, 49, 46, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(55, 49, 46, 0.12);
+    --shadow-xl: 0 20px 25px -5px rgba(55, 49, 46, 0.15);
+    
+    /* Efeitos Glow personalizados */
+    --glow-primary: 0 0 8px rgba(224, 122, 95, 0.4); /* Terracota luminosa */
+    --glow-accent: 0 0 8px rgba(106, 141, 115, 0.3); /* Verde suave */
+    --glow-secondary: 0 0 8px rgba(179, 146, 172, 0.3); /* Lavanda */
+    
+    /* Sombras internas para profundidade */
+    --shadow-inner: inset 0 2px 4px rgba(55, 49, 46, 0.05);
+    
+    /* Transições suaves */
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 body {
     width: 100vw;
     height: 300vh;
@@ -43,22 +85,22 @@ body {
                 font-size: 2.5rem;
                 font-weight: 600;
                 font-family: 'Montserrat', sans-serif;
-                color: var(--color-white);
+                color: var(--color-bg-alt);
                 text-decoration: none;
-                transition: var(--transition-fast);
+                transition: var(--transition-normal);
                 display: inline-block;
-                text-shadow: var(--glow-effect);  
+                text-shadow: var(--shadow-lg);  
             }
 
             & h1 {
                 font-size: 4rem;
                 font-weight: 700;
                 font-family: 'Montserrat', sans-serif;
-                color: var(--color-white);
+                color: var(--color-primary-light);
                 text-decoration: none;
-                transition: var(--transition-fast);
+                transition: var(--transition-normal);
                 display: inline-block;
-                text-shadow: var(--glow-effect);
+                text-shadow: var(--shadow-md);
                 text-align: center;
             }
         }
@@ -70,20 +112,20 @@ body {
             align-items: center;
 
             & a {
-                color: var(--color-white);
+                color: var(--color-bg-alt);
                 text-decoration: none;
                 font-family: 'Montserrat', sans-serif;
                 font-weight: 600;
                 position: relative;
                 padding: 0.5rem 0;
-                transition: var(--transition-fast);
+                transition: var(--transition-normal);
                 font-size: 1.3rem;
                 text-align: center;
                 cursor: pointer;
             }
 
             a:hover {
-                color: var(--color-gray-20);
+                color: var(--color-primary-light);
             }
 
             a::after {
@@ -93,7 +135,7 @@ body {
                 left: 0;
                 width: 0;
                 height: 2px;
-                background-color: var(--color-accent);
+                background-color: var(--color-primary-light);
                 transition: var(--transition-fast);
             }
 

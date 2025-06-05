@@ -1,16 +1,28 @@
 :root {
---color-primary: #2a6df4;        /* Azul principal moderno */
-  --color-primary-light: #4a8cff;   /* Azul mais claro */
-  --color-secondary: #6c5ce7;      /* Roxo para destaques */
-  --color-accent: #00c2a8;         /* Verde água para acentuação */
-  --color-dark: #1a1e29;           /* Fundo escuro sofisticado */
-  --color-dark-light: #252a38;     /* Fundo mais claro */
-  --color-gray-90: #2d3340;        /* Cinza escuro */
-  --color-gray-60: #5c6475;        /* Cinza médio */
-  --color-gray-20: #e2e6ee;        /* Cinza claro */
-  --color-white: #ffffff;          /* Branco */
-  --glow-effect: 0 0 12px rgba(42, 109, 244, 0.3);
-  --transition-fast: all 0.3s ease-in-out;
+    /* (Mantendo suas variáveis terrosas originais) */
+    --color-primary: #e07a5f;
+    --color-primary-light: #e9967a;
+    --color-primary-dark: #c56a52;
+    --color-bg-base: #f5f3f0;
+    --color-bg-alt: #ebe6e1;
+    --color-bg-card: #ffffff;
+    --color-text-primary: #33312e;
+    --color-text-secondary: #5a5753;
+    --color-accent: #6a8d73;
+    --color-accent-light: #8aaa91;
+    --color-secondary: #b392ac;
+    --color-border: #d7d2cc;
+    --shadow-sm: 0 1px 3px rgba(55, 49, 46, 0.08);
+    --shadow-md: 0 4px 6px rgba(55, 49, 46, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(55, 49, 46, 0.12);
+    --shadow-xl: 0 20px 25px -5px rgba(55, 49, 46, 0.15);
+    --glow-primary: 0 0 8px rgba(224, 122, 95, 0.4);
+    --glow-accent: 0 0 8px rgba(106, 141, 115, 0.3);
+    --glow-secondary: 0 0 8px rgba(179, 146, 172, 0.3);
+    --shadow-inner: inset 0 2px 4px rgba(55, 49, 46, 0.05);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar {
@@ -23,23 +35,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-dark);/* --color-deep-blue com transparência */
+  background-color: var(--color-bg-card); /* --color-text-primary com transparência */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(8px);
   padding: 1rem 1rem;
-  transition: var(--transition-fast);
+  transition: var(--transition-normal);
   overflow: hidden;
-  box-shadow: var(--glow-effect);
-  border: 1px solid rgba(42, 109, 244, 0.3); /* --color-cyan com transparência */
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
   border-top: none;
 }
 
 .navbar.scrolled {
-  background-color: rgba(37, 42, 56, 0.3); /* --color-navy com transparência */
+  background-color: var(--color-bg-base);
   backdrop-filter: blur(12px);
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
-  box-shadow: 0 0 15px rgba(42, 109, 244, 0.9);
+  box-shadow: var(--shadow-md);
   transform: translateY(-15vh);
 }
 
@@ -56,16 +68,15 @@
   font-size: 1.5rem;
   font-weight: 700;
   font-family: 'Inter', sans-serif;
-  color: var(--color-primary-light);
+  color: var(--color-primary);
   text-decoration: none;
-  transition: var(--transition-fast);
+  transition: var(--transition-normal);
   display: inline-block;
-  text-shadow: var(--glow-effect);
 }
 
 .navbarLogoPC a:hover {
   transform: scale(1.05);
-  color: var(--color-primary);
+  color: var(--color-primary-light);
 }
 
 .navbarLinks {
@@ -74,18 +85,18 @@
 }
 
 .navLink {
-  color: var(--color-gray-20);
+  color: var(--color-text-secondary); /* Usando o bege médio para texto */
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 1rem;
   position: relative;
   padding: 0.5rem 0;
-  transition: var(--transition-fast);
+  transition: var(--transition-normal);
 }
 
 .navLink:hover {
-  color: var(--color-white);
+  color: var(--color-primary); /* Branco puro no hover */
 }
 
 .navLink::after {
@@ -95,7 +106,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--color-accent);
+  background-color: var(--color-primary-light);
   transition: var(--transition-fast);
 }
 
@@ -115,19 +126,19 @@
   cursor: pointer;
   position: relative;
   padding: 0.5rem;
-  transition: var(--transition-fast);
+  transition: var(--transition-normal);
 }
 
 .navIcon {
-  color: var(--color-gray-20);
+  color: var(--color-text-secondary);
   font-size: 1.2rem;
-  transition: var(--transition-fast);
+  transition: var(--transition-normal);
 }
 
 .iconButton:hover .navIcon {
   color: var(--color-primary);
   transform: translateY(-2px);
-  filter: drop-shadow(var(--glow-effect));
+  filter: drop-shadow(var(--glow-primary));
 }
 
 .cartIcon {
@@ -138,8 +149,8 @@
   position: absolute;
   top: -5px;
   right: -5px;
-  background-color: var(--color-accent);
-  color: var(--color-white);
+  background-color: var(--color-secondary);
+  color: var(--color-bg-card);
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -149,13 +160,13 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 0.7rem;
   font-weight: bold;
-  box-shadow: 0 0 5px var(--color-accent);
+  box-shadow: 0 0 5px var(--color-secondary);
 }
 
-/* Efeito de brilho nos elementos interativos */
+/* Efeito de brilho atualizado */
 .navLink:hover,
 .iconButton:hover {
-  text-shadow: 0 0 8px rgba(42, 109, 244, 0.7);
+  text-shadow: 0 0 8px rgba(224, 122, 95, 0.5); /* Terracota com transparência */
 }
 
 /* Botão hambúrguer (menu mobile) */
@@ -181,68 +192,24 @@
   align-items: center;
 }
 
+
+/* Menu mobile */
 @media (max-width: 768px) {
-  .navbar {
-    height: auto;
-  }
-
-  .navbarLogoPC {
-    display: none;
-  }
-
-  .navbarContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .navbarTop {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-
   .navbarLogo a {
-    font-size: 1.5rem;
     color: var(--color-primary-light);
-    text-decoration: none;
-    font-weight: bold;
   }
 
   .hamburger {
-    display: flex;
-    cursor: pointer;
-    font-size: 1.8rem;
-    color: var(--color-cyan);
-  }
-
-  .navbarIcons {
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    gap: 2rem;
+    color: var(--color-primary);
   }
 
   .navbarLinks {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-    gap: 1rem;
-    background-color: rgba(29, 30, 41, 0.9);
-    border-radius: 16px;
-    padding: 1rem 2rem;
-    box-shadow: var(--glow-effect);
-    animation: dropdownFade 0.3s ease forwards;
-  }
-
-  .showMenu {
-    display: flex;
+    background-color: rgba(51, 49, 46, 0.95); /* --color-text-primary quase sólido */
+    box-shadow: var(--glow-primary);
   }
 }
 
-
+/* Mantendo as animações originais sem alterações */
 @keyframes dropdownFade {
   from {
     opacity: 0;

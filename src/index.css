@@ -1,22 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
 
-        :root {
-            /* Nova paleta de cores universal */
-            --color-primary: #2a6df4;        /* Azul principal moderno */
-            --color-primary-light: #4a8cff;   /* Azul mais claro */
-            --color-secondary: #6c5ce7;       /* Roxo para destaques */
-            --color-accent: #00c2a8;          /* Verde água para acentuação */
-            --color-dark: #1a1e29;            /* Fundo escuro sofisticado */
-            --color-dark-light: #252a38;      /* Fundo mais claro */
-            --color-gray-90: #2d3340;         /* Cinza escuro */
-            --color-gray-60: #5c6475;         /* Cinza médio */
-            --color-gray-20: #e2e6ee;         /* Cinza claro */
-            --color-white: #ffffff;           /* Branco */
-            
-            /* Efeitos atualizados */
-            --glow-effect: 0 0 12px rgba(42, 109, 244, 0.3);
-            --transition-fast: all 0.3s ease-in-out;
-        }
+:root {
+    /* Cores Primárias (Terracota) */
+    --color-primary: #e07a5f;       /* Terracota moderno */
+    --color-primary-light: #e9967a;
+    --color-primary-dark: #c56a52;
+    
+    /* Neutros Quentes */
+    --color-bg-base: #f5f3f0;       /* Bege muito claro */
+    --color-bg-alt: #ebe6e1;        /* Bege médio */
+    --color-bg-card: #ffffff;      
+    
+    /* Textos */
+    --color-text-primary: #33312e;   /* Quase preto com tom quente */
+    --color-text-secondary: #5a5753;
+    
+    /* Cores de Destaque */
+    --color-accent: #6a8d73;        /* Verde suave */
+    --color-accent-light: #8aaa91;
+    --color-secondary: #b392ac;      /* Lavanda suave */
+    
+    /* Bordas */
+    --color-border: #d7d2cc;
+    
+    --shadow-sm: 0 1px 3px rgba(55, 49, 46, 0.08); /* Tom terroso escuro com baixa opacidade */
+    --shadow-md: 0 4px 6px rgba(55, 49, 46, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(55, 49, 46, 0.12);
+    --shadow-xl: 0 20px 25px -5px rgba(55, 49, 46, 0.15);
+    
+    /* Efeitos Glow personalizados */
+    --glow-primary: 0 0 8px rgba(224, 122, 95, 0.4); /* Terracota luminosa */
+    --glow-accent: 0 0 8px rgba(106, 141, 115, 0.3); /* Verde suave */
+    --glow-secondary: 0 0 8px rgba(179, 146, 172, 0.3); /* Lavanda */
+    
+    /* Sombras internas para profundidade */
+    --shadow-inner: inset 0 2px 4px rgba(55, 49, 46, 0.05);
+    
+    /* Transições suaves */
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 * {
   margin: 0;
