@@ -1,4 +1,7 @@
-main{
+
+.mainDiv {
+  width: 100%;
+  height: 100%;
   background-color: hsl(216, 30%, 83%);
 }
 

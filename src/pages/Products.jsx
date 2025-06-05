@@ -69,6 +69,7 @@ const Products = () => {
     <div>
       <Navbar/>
       <main>
+        <div className={styles.mainDiv}>
         <div className={styles.hero}>
           <div className={styles.carrossel}>
             {images.map((image, index) => (
@@ -156,6 +157,7 @@ const Products = () => {
             ))}
           </div>
         </section>
+        </div>
       </main>
       <Footer/>
     </div>

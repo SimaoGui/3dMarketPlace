@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import ModelViewer from '../components/ModelViewer';
 import '../styles/productDetails.css'
 import { FaSquarePollVertical } from 'react-icons/fa6';
-import { FaBalanceScale, FaLayerGroup, FaPalette, FaRegStar, FaRulerCombined, FaSearchMinus, FaSearchPlus, FaStar, FaStarHalfAlt, FaWrench } from 'react-icons/fa';
+import { FaBalanceScale, FaBolt, FaHeart, FaLayerGroup, FaPalette, FaRegStar, FaRulerCombined, FaSearchMinus, FaSearchPlus, FaShoppingCart, FaStar, FaStarHalfAlt, FaWrench } from 'react-icons/fa';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -171,17 +171,17 @@ const handleViewChange = (view) => {
                 
                 <div className="product-actions">
                   <button className="action-btn buy-btn">
-                    <i className="fas fa-bolt"></i> Comprar Agora
+                    <FaBolt/> Comprar Agora
                   </button>
                   <button className="action-btn cart-btn">
-                    <i className="fas fa-shopping-cart"></i> Adicionar ao Carrinho
+                    <FaShoppingCart/> Adicionar ao Carrinho
                   </button>
                   <div className='action-add'>
                     <button 
                       className={`action-btn1 wishlist-btn ${isWishlisted ? 'wishlisted' : ''}`}
                       onClick={() => setIsWishlisted(!isWishlisted)}
                     >
-                      <i className={`fas fa-heart ${isWishlisted ? 'active' : ''}`}></i> 
+                      <FaHeart className={`fas fa-heart ${isWishlisted ? 'active' : ''}`}></FaHeart> 
                       {isWishlisted ? 'Favoritado' : 'Favoritar'}
                     </button>
                     <div className="quantity-selector">
