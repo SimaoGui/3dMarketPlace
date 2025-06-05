@@ -47,7 +47,8 @@ body {
     overflow-y: auto;
 
     & .parallax {
-        height: 140vh;
+        min-height: 100vh;
+        height: auto;
         width: 100vw;
         background-position: center;
         background-attachment: fixed;
@@ -144,4 +145,10 @@ body {
             }
         }
     }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
