@@ -23,7 +23,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-dark);/* --color-deep-blue com transparência */
+  background-color: var(--color-dark-light);/* --color-deep-blue com transparência */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(8px);
   padding: 1rem 1rem;

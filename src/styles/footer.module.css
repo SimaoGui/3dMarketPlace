@@ -1,6 +1,6 @@
 /* styles/Footer.module.css */
 .footer {
-  background: var(--color-dark);
+  background: var(--color-dark-light);
   padding: 60px 0 30px;
   color: var(--color-white);
 }
