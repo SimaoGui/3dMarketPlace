@@ -19,14 +19,16 @@
   top: 0;
   left: 0;
   width: 100%;
+  height: 8vh;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(10, 26, 47, 0.5); /* --color-deep-blue com transparência */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(8px);
-  padding: 1.5rem 2rem;
+  padding: 1rem 1rem;
   transition: var(--transition-fast);
-  border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
   overflow: hidden;
   box-shadow: var(--glow-effect);
   border: 1px solid rgba(76, 201, 240, 0.3); /* --color-cyan com transparência */
@@ -45,10 +47,10 @@
 .navbarContainer {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 }
 
 .navbarLogoPC a {

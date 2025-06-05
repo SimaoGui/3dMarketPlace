@@ -4,21 +4,27 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import styles from '../styles/ModelViewer.module.css';
 
-const ModelViewer = ({ src }) => {
+const ModelViewer = ({ src, rotationY = 0, rotationX = 0, scale = 1 }) => {
   const mountRef = useRef(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [progress, setProgress] = useState(0);
+  const modelRef = useRef(null);
+  const initialScaleRef = useRef(1);
+  const sceneRef = useRef(null);
+  const cameraRef = useRef(null);
+  const controlsRef = useRef(null);
 
   // Function to dispose of scene objects and free memory
   const disposeScene = (scene) => {
+    if (!scene) return;
+    
     scene.traverse((object) => {
       if (object.isMesh) {
         object.geometry.dispose();
         if (object.material.isMaterial) {
           object.material.dispose();
         } else {
-          // Handle multi-material objects
           for (const material of object.material) {
             material.dispose();
           }
@@ -31,7 +37,6 @@ const ModelViewer = ({ src }) => {
   };
 
   useEffect(() => {
-    // Check if src is provided; if not, exit early
     if (!src) {
       setLoading(false);
       setError('Nenhum modelo fornecido');
@@ -39,87 +44,83 @@ const ModelViewer = ({ src }) => {
     }
 
     const mount = mountRef.current;
+    if (!mount) return;
 
     // Scene setup
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x162a47);
+    sceneRef.current = scene;
 
-    // Ambient light
+    // Lighting
     const ambientLight = new THREE.AmbientLight(0x404040, 2);
     scene.add(ambientLight);
 
-    // Directional light for detail
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(1, 1, 1).normalize();
     scene.add(directionalLight);
 
-    // Back light for additional illumination
     const backLight = new THREE.DirectionalLight(0xffffff, 0.5);
     backLight.position.set(-1, -1, -1).normalize();
     scene.add(backLight);
 
-    // Camera setup
+    // Camera setup - position slightly elevated for better frontal view
     const camera = new THREE.PerspectiveCamera(
-      75,
+      50, // Slightly narrower field of view
       mount.clientWidth / mount.clientHeight,
       0.1,
       1000
     );
-    camera.position.z = 5;
+    camera.position.set(0, 0.5, 3); // Slightly elevated
+    camera.lookAt(0, 0, 0);
+    cameraRef.current = camera;
 
     // Renderer setup
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const renderer = new THREE.WebGLRenderer({ 
+      antialias: true, 
+      alpha: true,
+      powerPreference: "high-performance"
+    });
     renderer.setSize(mount.clientWidth, mount.clientHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.outputEncoding = THREE.sRGBEncoding;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1;
 
-    // Orbit controls for interaction
+    // Orbit controls with more restricted movement
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
-    controls.dampingFactor = 0.05;
+    controls.dampingFactor = 0.1;
     controls.screenSpacePanning = false;
     controls.minDistance = 1;
-    controls.maxDistance = 10;
-    controls.maxPolarAngle = Math.PI;
+    controls.maxDistance = 8;
+    controls.maxPolarAngle = Math.PI * 0.8; // Limit how much users can look from below
+    controlsRef.current = controls;
 
-    // GLTF model loader
+    // Model loading
     const loader = new GLTFLoader();
-
-    // Handle window resize
-    const handleResize = () => {
-      camera.aspect = mount.clientWidth / mount.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(mount.clientWidth, mount.clientHeight);
-    };
-
-    // Load the 3D model
     loader.load(
       src,
       (gltf) => {
         const model = gltf.scene;
+        modelRef.current = model;
 
         // Center and scale the model
         const box = new THREE.Box3().setFromObject(model);
         const center = box.getCenter(new THREE.Vector3());
+        model.position.sub(center);
+        
         const size = box.getSize(new THREE.Vector3());
-
-        model.position.sub(center); // Center the model at origin
         const maxDim = Math.max(size.x, size.y, size.z);
-        const scale = 3.0 / maxDim;
-        model.scale.set(scale, scale, scale);
-
-        // Aplicar rotação para corrigir orientação inicial
-        model.rotation.y = Math.PI/2; // Rotação de 180 graus no eixo Y
-
-        model.position.y -= 0.6;
-
+        initialScaleRef.current = 1.5 / maxDim;
+        
+        // Apply initial transformations
+        model.scale.setScalar(initialScaleRef.current * scale);
+        model.rotation.set(rotationX, Math.PI/2, 0);
+        
         scene.add(model);
         setLoading(false);
       },
       (xhr) => {
-        // Update loading progress
         setProgress((xhr.loaded / xhr.total) * 100);
       },
       (error) => {
@@ -129,7 +130,13 @@ const ModelViewer = ({ src }) => {
       }
     );
 
-    // Append renderer to DOM
+    // Handle window resize
+    const handleResize = () => {
+      camera.aspect = mount.clientWidth / mount.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(mount.clientWidth, mount.clientHeight);
+    };
+
     mount.appendChild(renderer.domElement);
     window.addEventListener('resize', handleResize);
 
@@ -141,17 +148,39 @@ const ModelViewer = ({ src }) => {
     };
     animate();
 
-    // Cleanup on unmount or src change
+    // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
-      if (mount.contains(renderer.domElement)) {
-        mount.removeChild(renderer.domElement);
-      }
+      mount.removeChild(renderer.domElement);
       controls.dispose();
       renderer.dispose();
       disposeScene(scene);
+      modelRef.current = null;
+      sceneRef.current = null;
+      cameraRef.current = null;
+      controlsRef.current = null;
     };
   }, [src]);
+
+  // Handle rotation and scale changes
+  useEffect(() => {
+    if (modelRef.current) {
+      modelRef.current.rotation.set(rotationX, rotationY, 0);
+      modelRef.current.scale.setScalar(initialScaleRef.current * scale);
+      
+      // Reset camera position when view changes
+      if (cameraRef.current) {
+        cameraRef.current.position.set(0, 0.5, 3);
+        cameraRef.current.lookAt(0, 0, 0);
+      }
+      
+      // Reset controls target
+      if (controlsRef.current) {
+        controlsRef.current.target.set(0, 0, 0);
+        controlsRef.current.update();
+      }
+    }
+  }, [rotationX, rotationY, scale]);
 
   return (
     <div className={styles.viewerContainer} ref={mountRef}>
