@@ -13,11 +13,15 @@
   },
   "homepage": "https://simaogui.github.io/3dMarketPlace",
   "dependencies": {
+    "@react-three/drei": "^10.1.2",
+    "@react-three/fiber": "^9.1.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-helmet": "^6.1.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.6.0",
-    "scrollreveal": "^4.0.9"
+    "scrollreveal": "^4.0.9",
+    "three": "^0.177.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

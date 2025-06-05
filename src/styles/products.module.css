@@ -1,4 +1,7 @@
-/* styles/Products.module.css */
+main{
+  background-color: hsl(216, 30%, 83%);
+}
+
 .hero {
   position: relative;
   height: 80vh;
@@ -126,5 +129,280 @@
     width: 40px;
     height: 40px;
     font-size: 1.2rem;
+  }
+}
+
+/* Estilos para a seção de produtos */
+.productsSection {
+  padding: 3rem 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.productsTitle {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--color-white);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  text-shadow: var(--glow-effect);
+}
+
+.productsGrid {
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+  
+  /* Responsividade automática */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.productCard {
+  background: var(--color-deep-blue);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 168, 232, 0.1);
+  border-color: rgba(76, 201, 240, 0.5);
+}
+
+.productImage {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  border-bottom: 1px solid var(--color-electric-blue);
+  transition: var(--transition-fast);
+}
+
+.productInfo {
+  padding: 1.5rem;
+}
+
+.productTitle {
+  color: var(--color-white);
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.productDescription {
+  color: var(--color-gray-20);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  min-height: 60px;
+}
+
+.productFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.productPrice {
+  color: var(--color-cyan);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.productButton {
+  background: var(--color-electric-blue);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.productButton:hover {
+  background: var(--color-cyan);
+  box-shadow: var(--glow-effect);
+}
+
+/* Loading e erros */
+.loading, .error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: var(--color-cyan);
+}
+
+.error {
+  color: #ff4444;
+}
+
+/* styles/Categories.module.css */
+
+.categoria {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.categoria h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--color-white);
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  text-shadow: var(--glow-effect);
+  letter-spacing: 1px;
+}
+
+.categoria > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.divCategoria {
+  position: relative;
+  cursor: pointer;
+  width: 300px;
+  height: 200px;
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(145deg, 
+    rgba(22, 42, 71, 0.8), 
+    rgba(10, 26, 47, 0.9));
+  border: 1px solid rgba(76, 201, 240, 0.2);
+}
+
+.divCategoria:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 168, 232, 0.1);
+  border-color: rgba(76, 201, 240, 0.5);
+}
+
+.divCategoria img {
+  margin-top: .5rem;
+  width: 100%;
+  height: 75%;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.divCategoria:hover img {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.divCategoria h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  margin: 0;
+  color: var(--color-white);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  background: linear-gradient(to top, 
+    rgba(10, 26, 47, 0.9) 0%, 
+    transparent 100%);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
+}
+
+/* Efeito de brilho futurista */
+.divCategoria::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, 
+    rgba(76, 201, 240, 0.1) 0%, 
+    transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.divCategoria:hover::before {
+  opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .divCategoria {
+    width: 280px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .categoria h1 {
+    font-size: 2rem;
+  }
+  
+  .divCategoria {
+    width: 240px;
+    height: 200px;
+  }
+  
+  .divCategoria h2 {
+    font-size: 1.3rem;
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .categoria > div {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .divCategoria {
+    width: 80%;
+    max-width: 350px;
+    height: 180px;
+  }
+}
+
+
+/* Ajustes para diferentes tamanhos de tela */
+@media (min-width: 1800px) {
+  .productsGrid {
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas muito grandes */
+  }
+}
+
+@media (max-width: 1200px) {
+  .productsGrid {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas em desktops */
+  }
+}
+
+@media (max-width: 900px) {
+  .productsGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .productsGrid {
+    grid-template-columns: 1fr; /* 1 coluna em mobile */
+    gap: 1.5rem;
+  }
+}
+
+/* Ajuste opcional para evitar itens muito esticados em telas grandes */
+@media (min-width: 1400px) {
+  .productsGrid {
+    max-width: 1400px;
+    margin: 0 auto;
   }
 }

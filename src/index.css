@@ -8,8 +8,10 @@
   --color-cyan: #4cc9f0;           /* Ciano (hover, detalhes finos) */
   --color-gray-90: #1a1a1a;        /* Cinza quase preto (fundos opacos) */
   --color-gray-60: #4d4d4d;        /* Cinza médio (bordas, textos secundários) */
-  --color-gray-20: #eeeeee;        /* Cinza claro (textos principais) */
-  --color-white: #ffffff;          /* Branco puro (títulos, ícones) */
+  --color-gray-20: #efefef;        /* Cinza claro (textos principais) */
+  --color-white: #ffffff;     
+  --color-bg-azulado: #f8faff; /* HEX alternativa */
+  --color-bg-azulado: hsl(216, 20%, 98%); /* Versão HSL (recomendado) */     /* Branco puro (títulos, ícones) */
 
   /* Efeitos Futuristas */
   --glow-effect: 0 0 10px rgba(0, 168, 232, 0.7); /* Sombreamento neón azul */
