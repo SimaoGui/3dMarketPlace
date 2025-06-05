@@ -27,7 +27,7 @@
 }
 
 .sectionTitle {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: var(--color-cyan);
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
@@ -55,7 +55,7 @@
 }
 
 .serviceLink:hover {
-  color: var(--color-electric-blue);
+  color: var(--color-primary-light);
   transform: translateX(5px);
 }
 
@@ -85,7 +85,7 @@
 
 .socialIcon {
   font-size: 1.5rem;
-  color: var(--color-electric-blue);
+  color: var(--color-primary-light);
   min-width: 30px;
 }
 
@@ -103,7 +103,7 @@
 }
 
 .paymentIcon:hover {
-  color: var(--color-electric-blue);
+  color: var(--color-primary-light);
   transform: translateY(-3px);
 }
 
@@ -119,8 +119,8 @@
 }
 
 .brandName {
-  font-family: 'Orbitron', sans-serif;
-  color: var(--color-cyan);
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-primary);
   font-size: 1.4rem;
   letter-spacing: 1px;
   text-shadow: var(--glow-effect);
