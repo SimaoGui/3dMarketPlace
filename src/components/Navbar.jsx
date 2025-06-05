@@ -3,33 +3,25 @@ import { Link } from 'react-router-dom';
 import { FiShoppingBag, FiHeart, FiUser, FiSearch, FiMenu, FiX } from 'react-icons/fi';
 import styles from '../styles/navbar.module.css';
 import '../index.css';
-import ScrollReveal from 'scrollreveal';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
+useEffect(() => {
+  const handleScroll = () => {
+    const isScrolled = window.scrollY > 5;
+    setScrolled(isScrolled);
+  };
 
-    ScrollReveal().reveal(`.${styles.navbarContainer}`, {
-      origin: 'top',
-      distance: '50px',
-      duration: 500,
-      delay: 100,
-      easing: 'ease-in-out',
-      reset: false,
-      opacity: 0,
-      scale: 0.95,
-    });
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll(); // Verifica o estado inicial
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
+
 
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>

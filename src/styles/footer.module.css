@@ -43,8 +43,9 @@
 .footer {
   background: var(--color-dark-light);
   background: var(--color-bg-alt);
-  padding: 60px 0 30px;
+  padding: 60px 60px 30px 60px !important;
   color: var(--color-text-primary);
+  width: 100%;
 }
 
 .footerContent {
